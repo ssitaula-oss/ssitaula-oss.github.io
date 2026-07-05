@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Siddhartha Sitaula, a Computer Science student and IT consultant at the University of New Mexico." />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="canonical" href="https://siddharthasitaula.dev/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Siddhartha Sitaula | Portfolio" />
+  <meta property="og:description" content="Computer Science student at the University of New Mexico building Java applications, games, and algorithms." />
+  <meta property="og:image" content="https://siddharthasitaula.dev/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Siddhartha Sitaula | Portfolio" />
+  <meta name="twitter:description" content="Computer Science student at the University of New Mexico building Java applications, games, and algorithms." />
+
+  <title>Siddhartha Sitaula | Portfolio</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f1f33'/%3E%3Ctext x='50%25' y='56%25' font-family='monospace' font-weight='700' font-size='26' fill='%236ee7d8' text-anchor='middle'%3ESS%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Siddhartha Sitaula",
+    "jobTitle": "Computer Science Student",
+    "worksFor": { "@type": "Organization", "name": "University of New Mexico" },
+    "url": "https://siddharthasitaula.dev/",
+    "sameAs": ["https://www.linkedin.com/in/ssiddhartha-sitaula", "https://github.com/ssitaula-oss"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <div class="page-noise"></div>
+
+  <div class="terminal-gate" id="terminalGate" role="dialog" aria-modal="true" aria-label="Access terminal">
+    <button class="terminal-skip" id="terminalSkip" type="button">Skip intro →</button>
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots"><span></span><span></span><span></span></div>
+        <span class="terminal-title">access.sh — guest session</span>
+        <button class="terminal-sound" id="terminalSound" type="button" aria-pressed="false" aria-label="Toggle terminal keystroke sound">🔇</button>
+      </div>
+      <div class="terminal-body" id="terminalBody" aria-live="polite"></div>
+      <div class="terminal-input-row">
+        <label class="terminal-prompt" for="terminalInput">guest@siddhartha:~$</label>
+        <input
+          type="text"
+          id="terminalInput"
+          class="terminal-input"
+          autocomplete="off"
+          autocapitalize="off"
+          autocorrect="off"
+          spellcheck="false"
+          aria-label="Terminal command input. Type anything and press Enter to continue."
+        />
+      </div>
+      <p class="terminal-hint">Type <code>help</code> for commands, or just press <kbd>Enter</kbd> to continue.</p>
+    </div>
+  </div>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="brand-mark">SS</span>
+        <span class="brand-text">Siddhartha</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" aria-label="Toggle color theme">
+          <span class="theme-icon">☾</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Computer Science Student • IT Consultant</p>
+          <h1>
+            I build practical software
+            <span class="gradient-text">that solves real problems.</span>
+          </h1>
+          <p class="hero-description">
+            I’m Siddhartha Sitaula, a Computer Science student at the University of New Mexico
+            with a solid background in Java, data structures, and solving problems with algorithms.
+            I build interactive apps and games from the ground up, and I bring hands-on IT support
+            experience — troubleshooting hardware, software, and classroom systems — to everything I do.
+          </p>
+
+          <div class="hero-highlights">
+            <span class="highlight-chip">3.70 GPA</span>
+            <span class="highlight-chip">Dean’s List ×2</span>
+            <span class="highlight-chip">Amigo Scholarship</span>
+            <span class="highlight-chip">Java · C · Python · JS</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Explore my work</a>
+            <a class="button secondary" href="#contact">Contact me</a>
+            <a class="button ghost" href="resume.pdf" download>Download resume ↓</a>
+          </div>
+
+          <div class="hero-meta">
+            <span><i class="status-dot"></i> Open to internships</span>
+            <span>Albuquerque, New Mexico</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="code-window">
+            <div class="window-bar">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="window-title">portfolio.java</span>
+            </div>
+            <pre><code><span class="code-keyword">public class</span> <span class="code-class">Siddhartha</span> {
+  <span class="code-keyword">String</span> role = <span class="code-string">"CS Student"</span>;
+  <span class="code-keyword">String</span> focus = <span class="code-string">"Software Engineering"</span>;
+
+  <span class="code-keyword">void</span> <span class="code-method">build</span>() {
+    solveProblems();
+    createExperiences();
+    keepLearning();
+  }
+}</code></pre>
+          </div>
+
+          <div class="floating-card card-one">
+            <span class="floating-icon">⌘</span>
+            <div>
+              <strong>Java & C</strong>
+              <small>Core programming</small>
+            </div>
+          </div>
+
+          <div class="floating-card card-two">
+            <span class="floating-icon">AI</span>
+            <div>
+              <strong>Chess Engine</strong>
+              <small>Minimax project</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-indicator" href="#about" aria-label="Scroll to About section">
+        <span>Scroll</span>
+        <span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">About me</p>
+          <h2>Curious mind. Reliable teammate. Constant learner.</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              I am studying Computer Science at the University of New Mexico and working as a
+              Student Consultant with UNM IT Academic Technologies. My experience combines
+              software development, technical troubleshooting, customer support, and teamwork.
+            </p>
+            <p>
+              I like turning complex ideas into simple, useful programs. My projects have helped
+              me practice object-oriented programming, data structures, recursion, algorithms,
+              GUI development, and debugging.
+            </p>
+            <p>
+              My path started in Simara, Nepal, where I led IT support for a student organization —
+              keeping event tech running, repairing systems, and helping people through technical
+              problems. After building my foundation in mathematics and computer science at Prasadi
+              Academy in Kathmandu, I moved to the United States in 2024 to study CS at UNM, where
+              I've maintained a 3.70 GPA while working and building projects.
+            </p>
+          </div>
+
+          <div class="stats-grid reveal">
+            <article class="stat-card">
+              <strong data-count="6">0</strong><span>+</span>
+              <p>Programming projects</p>
+            </article>
+            <article class="stat-card">
+              <strong data-count="4">0</strong><span>+</span>
+              <p>Programming languages</p>
+            </article>
+            <article class="stat-card">
+              <strong data-count="3.7" data-decimals="2">0</strong><span>GPA</span>
+              <p>3.70 / 4.00 at UNM</p>
+            </article>
+            <article class="stat-card">
+              <strong data-count="2">0</strong><span>×</span>
+              <p>Dean's List semesters</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="about-details reveal">
+          <article class="detail-card">
+            <h3>Honors &amp; recognition</h3>
+            <ul>
+              <li><strong>Dean's List, School of Engineering</strong> — Fall 2024 and Spring 2025, for maintaining a 3.5+ GPA.</li>
+              <li><strong>International Amigo Scholarship</strong> — awarded for academic performance, providing in-state tuition benefits.</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Current coursework</h3>
+            <ul>
+              <li>Data Structures &amp; Algorithms</li>
+              <li>Software Engineering</li>
+              <li>Operating Systems</li>
+              <li>Design of Large Programs</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Beyond the code</h3>
+            <ul>
+              <li>Supporting classrooms and faculty across Windows, macOS, and Linux at UNM IT.</li>
+              <li>Documenting solutions clearly so the next person can fix it faster.</li>
+              <li>Learning something new with every project — most recently game AI and search algorithms.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted-section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Technical toolkit</p>
+          <h2>Skills I use to build and support technology.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <div class="skill-icon">&lt;/&gt;</div>
+            <h3>Programming</h3>
+            <p>Java, C, JavaScript, Python, HTML, and CSS.</p>
+            <div class="tag-row">
+              <span>OOP</span><span>Recursion</span><span>Algorithms</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">▦</div>
+            <h3>Software Development</h3>
+            <p>Data structures, debugging, GUI development, and version control.</p>
+            <div class="tag-row">
+              <span>Git</span><span>Java Swing</span><span>VS Code</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">⌁</div>
+            <h3>IT Support</h3>
+            <p>Windows and macOS support, classroom technology, ticketing, and troubleshooting.</p>
+            <div class="tag-row">
+              <span>Imaging</span><span>Hardware</span><span>Support</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">◎</div>
+            <h3>Professional Skills</h3>
+            <p>Communication, teamwork, documentation, adaptability, and customer service.</p>
+            <div class="tag-row">
+              <span>Leadership</span><span>Teamwork</span><span>Learning</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading project-heading reveal">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Projects that show how I think and build.</h2>
+          </div>
+          <div class="project-filters" role="group" aria-label="Project filters">
+            <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="java">Java</button>
+            <button class="filter-button" data-filter="algorithms">Algorithms</button>
+            <button class="filter-button" data-filter="gui">GUI</button>
+          </div>
+        </div>
+
+        <p class="visually-hidden" id="filterStatus" aria-live="polite"></p>
+
+        <div class="project-grid">
+          <article class="project-card featured reveal" data-category="java algorithms gui">
+            <div class="project-art chess-art" aria-hidden="true">
+              <span>♜</span><span>♞</span><span>♝</span><span>♛</span>
+            </div>
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-number">01</span>
+                <span class="project-status">Featured</span>
+              </div>
+              <h3>Chess Game with Minimax AI</h3>
+              <p>
+                A playable chess application with legal move highlighting, player-versus-player
+                mode, and an AI opponent powered by minimax search and evaluation logic.
+              </p>
+              <div class="tag-row">
+                <span>Java</span><span>Minimax</span><span>Game AI</span><span>GUI</span>
+              </div>
+              <div class="project-links">
+                <a href="chess.html" class="play-link" aria-label="Play the chess game in your browser">Play in browser ▶</a>
+                <a href="https://github.com/ssitaula-oss?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="Chess project source code on GitHub">Source code ↗</a>
+                <button type="button" class="case-study-trigger" data-case-study="chess" aria-haspopup="dialog">Case study →</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="java algorithms gui">
+            <div class="project-art hex-art" aria-hidden="true">
+              <div class="hex">6</div><div class="hex">✦</div><div class="hex">2</div>
+            </div>
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-number">02</span>
+              </div>
+              <h3>Hexagonal Minesweeper</h3>
+              <p>
+                A minesweeper game built on a hexagonal grid using axial coordinates,
+                randomized mine placement, flood fill, difficulty modes, and a timer.
+              </p>
+              <div class="tag-row">
+                <span>Java</span><span>BFS</span><span>Coordinates</span><span>GUI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ssitaula-oss?tab=repositories" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="java algorithms">
+            <div class="project-art hangman-art" aria-hidden="true">
+              <span>_ _ _ _ _</span>
+              <small>Choose wisely.</small>
+            </div>
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-number">03</span>
+              </div>
+              <h3>Evil Hangman</h3>
+              <p>
+                A strategic version of Hangman that dynamically selects word families
+                to avoid revealing a secret word for as long as possible.
+              </p>
+              <div class="tag-row">
+                <span>Java</span><span>Maps</span><span>Sets</span><span>Algorithms</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ssitaula-oss?tab=repositories" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="java gui">
+            <div class="project-art particle-art" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-number">04</span>
+              </div>
+              <h3>Particle Simulation</h3>
+              <p>
+                An interactive simulation featuring sand, water, oil, plants, acid, and lava,
+                each with unique movement and interaction behavior.
+              </p>
+              <div class="tag-row">
+                <span>Java</span><span>OOP</span><span>Simulation</span><span>GUI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ssitaula-oss?tab=repositories" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="java algorithms gui">
+            <div class="project-art lights-art" aria-hidden="true">
+              <span></span><span class="on"></span><span></span>
+              <span class="on"></span><span class="on"></span><span></span>
+              <span></span><span></span><span class="on"></span>
+            </div>
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-number">05</span>
+              </div>
+              <h3>Lights Out Puzzle</h3>
+              <p>
+                A puzzle game where toggling one light also changes its neighbors,
+                with random board generation and solved-state detection.
+              </p>
+              <div class="tag-row">
+                <span>Java</span><span>2D Arrays</span><span>Logic</span><span>GUI</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ssitaula-oss?tab=repositories" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="java algorithms">
+            <div class="project-art postfix-art" aria-hidden="true">
+              <span>8 2 / 3 +</span>
+              <strong>= 7</strong>
+            </div>
+            <div class="project-content">
+              <div class="project-topline">
+                <span class="project-number">06</span>
+              </div>
+              <h3>Postfix Calculator</h3>
+              <p>
+                A stack-based calculator that evaluates postfix expressions and supports
+                arithmetic operators, square roots, and output commands.
+              </p>
+              <div class="tag-row">
+                <span>Java</span><span>Stacks</span><span>Parsing</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/ssitaula-oss?tab=repositories" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted-section" id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Experience & education</p>
+          <h2>Learning in the classroom and solving problems in the real world.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">Present</div>
+            <div class="timeline-card">
+              <p class="timeline-label">Professional Experience</p>
+              <h3>Student Consultant I</h3>
+              <h4>UNM IT Academic Technologies</h4>
+              <p>
+                Support classrooms, faculty, students, and technology across Windows and macOS
+                environments. Troubleshoot hardware, software, audiovisual systems, and user issues.
+              </p>
+              <ul>
+                <li>Deliver clear and professional technical support.</li>
+                <li>Document incidents and solutions in a ticketing system.</li>
+                <li>Help maintain reliable classroom technology.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">2024–Present</div>
+            <div class="timeline-card">
+              <p class="timeline-label">Education</p>
+              <h3>Bachelor of Science in Computer Science</h3>
+              <h4>University of New Mexico</h4>
+              <p>
+                Coursework and projects in programming fundamentals, object-oriented programming,
+                data structures, algorithms, mathematics, physics, and software development.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">2023</div>
+            <div class="timeline-card">
+              <p class="timeline-label">Foundation</p>
+              <h3>Mathematics & Computer Science</h3>
+              <h4>Prasadi Academy, Kathmandu, Nepal</h4>
+              <p>
+                Built a strong foundation in mathematics, logical reasoning, and computer science
+                before continuing my studies in the United States.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="testimonials reveal">
+          <h3>What people say</h3>
+          <div class="testimonial-grid">
+            <div class="testimonial-card">
+              “Add a short quote from a supervisor, professor, or teammate here.”
+              <strong>Name, Role — Organization</strong>
+            </div>
+            <div class="testimonial-card">
+              “A second testimonial helps show a different side of your work.”
+              <strong>Name, Role — Organization</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-panel" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Let’s connect</p>
+          <h2>Have an opportunity or project in mind?</h2>
+          <p>
+            I’m interested in software engineering internships, technical roles, and projects
+            where I can learn, contribute, and solve meaningful problems.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:siddharthasitaula7@gmail.com" id="emailLink">
+              <span>Email</span>
+              <strong>siddharthasitaula7@gmail.com</strong>
+            </a>
+            <button class="copy-email" id="copyEmail" type="button" aria-label="Copy email address to clipboard">
+              <span id="copyEmailLabel">Copy email</span>
+            </button>
+            <a href="https://www.linkedin.com/in/ssiddhartha-sitaula" target="_blank" rel="noopener noreferrer">
+              <span>LinkedIn</span>
+              <strong>linkedin.com/in/ssiddhartha-sitaula</strong>
+            </a>
+            <a href="https://github.com/ssitaula-oss?tab=repositories" target="_blank" rel="noopener noreferrer">
+              <span>GitHub</span>
+              <strong>github.com/ssitaula-oss</strong>
+            </a>
+            <a href="resume.pdf" download>
+              <span>Resume</span>
+              <strong>Download PDF ↓</strong>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <label class="hp-field" aria-hidden="true">
+            Leave this field empty
+            <input type="text" name="company" tabindex="-1" autocomplete="off" />
+          </label>
+
+          <div class="form-row">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+
+          <label>
+            Subject
+            <input type="text" name="subject" placeholder="What would you like to discuss?" required />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="6" placeholder="Write your message here..." required></textarea>
+          </label>
+
+          <button class="button primary form-button" type="submit">Send message</button>
+          <p class="form-note">This demo opens your email app. No form service is required.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Siddhartha Sitaula. Built with HTML, CSS, and JavaScript.</p>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="case-modal-backdrop" id="caseStudyBackdrop">
+    <div class="case-modal" id="caseStudyModal" role="dialog" aria-modal="true" aria-labelledby="caseStudyTitle" tabindex="-1"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
