@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 — Siddhartha Sitaula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    color: #f2f5fb;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(139, 140, 255, 0.14), transparent 32%),
+      radial-gradient(circle at 85% 90%, rgba(110, 231, 216, 0.1), transparent 32%),
+      #07111f;
+    padding: 24px;
+  }
+  .terminal {
+    width: min(100%, 520px);
+    background: rgba(9, 18, 30, 0.96);
+    border: 1px solid rgba(110, 231, 216, 0.18);
+    border-radius: 18px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+  }
+  .bar {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .bar span { width: 10px; height: 10px; border-radius: 50%; }
+  .bar span:nth-child(1) { background: #ff6b6b; }
+  .bar span:nth-child(2) { background: #ffd166; }
+  .bar span:nth-child(3) { background: #4ade80; }
+  .body {
+    padding: 26px 24px 30px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.88rem;
+    line-height: 1.9;
+  }
+  .dim { color: #6f8296; }
+  .warn { color: #ffd166; }
+  .accent { color: #6ee7d8; }
+  a {
+    display: inline-block;
+    margin-top: 18px;
+    color: #6ee7d8;
+    text-decoration: none;
+    border: 1px solid rgba(110, 231, 216, 0.35);
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  a:hover { background: rgba(110, 231, 216, 0.08); }
+</style>
+</head>
+<body>
+  <main class="terminal">
+    <div class="bar"><span></span><span></span><span></span></div>
+    <div class="body">
+      <div class="dim">guest@siddhartha:~$ open <span id="path">this-page</span></div>
+      <div class="warn">bash: 404 — no such file or directory</div>
+      <div class="dim">the page you're looking for doesn't exist (or moved).</div>
+      <div class="accent">suggestion: return to a known-good directory.</div>
+      <a href="/">cd ~/portfolio →</a>
+    </div>
+  </main>
+  <script>
+    var p = location.pathname.replace(/^\//, "");
+    if (p) document.getElementById("path").textContent = p;
+  </script>
+</body>
+</html>
