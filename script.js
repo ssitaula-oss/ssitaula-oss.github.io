@@ -500,3 +500,16 @@ contactForm.addEventListener("submit", (event) => {
     if (event.key === "Escape" && backdrop.classList.contains("active")) close();
   });
 })();
+
+/* ---------- Live nav clock ---------- */
+(function initNavClock() {
+  const clock = document.getElementById("navClock");
+  if (!clock) return;
+  function tick() {
+    clock.textContent = new Date().toLocaleTimeString([], {
+      hour: "2-digit", minute: "2-digit", second: "2-digit",
+    });
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
