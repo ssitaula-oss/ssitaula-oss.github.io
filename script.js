@@ -160,7 +160,7 @@ contactForm.addEventListener("submit", (event) => {
   const message = formData.get("message").trim();
 
   const emailBody = `Hi Siddhartha,%0D%0A%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(name)} (${encodeURIComponent(email)})`;
-  const mailto = `mailto:siddharthasitaula7@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+  const mailto = `mailto:sitaulasiddhartha616@gmail.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
 
   window.location.href = mailto;
 });
@@ -171,7 +171,7 @@ contactForm.addEventListener("submit", (event) => {
   const label = document.getElementById("copyEmailLabel");
   if (!button || !label) return;
 
-  const email = "siddharthasitaula7@gmail.com";
+  const email = "sitaulasiddhartha616@gmail.com";
   const defaultText = label.textContent;
 
   button.addEventListener("click", async () => {
