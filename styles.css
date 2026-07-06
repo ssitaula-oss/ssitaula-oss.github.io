@@ -1785,3 +1785,16 @@ body.light .chess-art {
   color: var(--muted);
   margin: 0;
 }
+
+/* ---------- Nav clock ---------- */
+.nav-clock {
+  font: 600 0.76rem "JetBrains Mono", monospace;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 760px) {
+  .nav-clock {
+    display: none;
+  }
+}
