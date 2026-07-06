@@ -202,6 +202,52 @@
     font: 600 0.8rem "JetBrains Mono", monospace;
     color: var(--muted);
   }
+  .promo-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    background: rgba(4, 9, 15, 0.7);
+    backdrop-filter: blur(3px);
+  }
+  .promo-overlay.active { display: flex; }
+  .promo-box {
+    background: rgba(9, 18, 30, 0.97);
+    border: 1px solid rgba(110, 231, 216, 0.25);
+    border-radius: 16px;
+    padding: 22px 26px 14px;
+    text-align: center;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+  }
+  .promo-title {
+    margin: 0 0 14px;
+    font: 600 0.85rem "JetBrains Mono", monospace;
+    color: var(--accent);
+  }
+  .promo-choices { display: flex; gap: 10px; }
+  .promo-choices button {
+    width: 64px;
+    height: 64px;
+    font-size: 40px;
+    line-height: 1;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    cursor: pointer;
+    color: #f5f7fb;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .promo-choices button:hover {
+    border-color: rgba(110, 231, 216, 0.6);
+    transform: translateY(-2px);
+  }
+  .promo-hint {
+    margin: 12px 0 0;
+    font: 400 0.68rem "JetBrains Mono", monospace;
+    color: #5c6f82;
+  }
 </style>
 </head>
 <body>
@@ -247,10 +293,19 @@
 
   <div class="move-count" id="moveCount">Move 1</div>
 
+  <div class="promo-overlay" id="promoOverlay" role="dialog" aria-modal="true" aria-label="Choose promotion piece">
+    <div class="promo-box">
+      <p class="promo-title">Promote pawn to</p>
+      <div class="promo-choices" id="promoChoices"></div>
+      <p class="promo-hint">Esc to cancel</p>
+    </div>
+  </div>
+
   <p class="footnote">
-    You play White. Pawns auto-promote to queens. The original project is written in Java
-    (Swing) — this page ports its logic to JavaScript so it runs right in your browser, and
-    adds castling and en passant on top of the original rule set.
+    You play White. When a pawn reaches the last rank, choose its promotion — queen, rook,
+    bishop, or knight. The original project is written in Java (Swing) — this page ports its
+    logic to JavaScript so it runs right in your browser, and adds castling, en passant, and
+    promotion choice on top of the original rule set.
   </p>
 
 <script>
@@ -454,7 +509,7 @@ function makeMove(s, move) {
     board[to[0]][0] = null;
   }
   if (typeOf(piece) === "p" && (to[0] === 0 || to[0] === 7)) {
-    board[to[0]][to[1]] = color + "q"; // auto-queen
+    board[to[0]][to[1]] = color + (move.promo || "q");
     record.promoted = true;
   }
 
@@ -717,12 +772,66 @@ function updateStatus() {
   else statusEl.textContent = `${side} to move`;
 }
 
+/* ---------- Pawn promotion picker ---------- */
+const promoOverlay = document.getElementById("promoOverlay");
+const promoChoices = document.getElementById("promoChoices");
+let pendingPromotion = null;
+
+function openPromotionPicker(move, color) {
+  pendingPromotion = move;
+  promoChoices.innerHTML = "";
+  ["q", "r", "b", "n"].forEach((pieceType) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = GLYPH[color + pieceType];
+    btn.setAttribute("aria-label", { q: "Queen", r: "Rook", b: "Bishop", n: "Knight" }[pieceType]);
+    btn.addEventListener("click", () => completePromotion(pieceType));
+    promoChoices.appendChild(btn);
+  });
+  promoOverlay.classList.add("active");
+  promoChoices.firstChild.focus();
+}
+
+function completePromotion(pieceType) {
+  if (!pendingPromotion) return;
+  const move = pendingPromotion;
+  pendingPromotion = null;
+  promoOverlay.classList.remove("active");
+  move.promo = pieceType;
+  makeMove(state, move);
+  selected = null;
+  legalForSelected = [];
+  render();
+  maybeAIMove();
+}
+
+function cancelPromotion() {
+  pendingPromotion = null;
+  promoOverlay.classList.remove("active");
+  selected = null;
+  legalForSelected = [];
+  render();
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && pendingPromotion) cancelPromotion();
+});
+
+promoOverlay.addEventListener("click", (event) => {
+  if (event.target === promoOverlay) cancelPromotion();
+});
+
 function onSquareClick(r, c) {
-  if (aiThinking || flagged) return;
+  if (aiThinking || flagged || pendingPromotion) return;
   if (vsAI && state.turn === "b") return;
 
   const target = legalForSelected.find((m) => m.to[0] === r && m.to[1] === c);
   if (selected && target) {
+    const movingPiece = state.board[target.from[0]][target.from[1]];
+    if (typeOf(movingPiece) === "p" && (target.to[0] === 0 || target.to[0] === 7)) {
+      openPromotionPicker(target, colorOf(movingPiece));
+      return;
+    }
     makeMove(state, target);
     selected = null;
     legalForSelected = [];
