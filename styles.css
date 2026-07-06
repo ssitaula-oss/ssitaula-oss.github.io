@@ -1741,3 +1741,47 @@ body.light .chess-art {
 .play-link {
   color: var(--accent) !important;
 }
+
+/* ---------- Availability badge ---------- */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  font: 600 0.76rem "JetBrains Mono", monospace;
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  background: rgba(74, 222, 128, 0.07);
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot { animation: none; }
+}
+
+/* ---------- Static contact row (location) ---------- */
+.contact-static {
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+}
+
+/* ---------- Footer terminal line ---------- */
+.footer-terminal {
+  font: 400 0.74rem "JetBrains Mono", monospace;
+  color: var(--muted);
+  margin: 0;
+}
